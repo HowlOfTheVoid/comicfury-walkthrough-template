@@ -1,0 +1,1203 @@
+﻿/*
+name: 			Walkthrough
+version: 		0.1
+author: 		HowlOfTheVoid
+author link: 	https://comicfury.com/profile.php?username=HowlOfTheVoid
+license: 		created exclusively for comic fury. feel free to use and modify, but please keep this credit
+icons:
+*/
+
+/*
+    ROOT
+    
+    This style segment doesn't really get used for any particular aspect of the website:
+        Instead, it's for storing the variables of the colors that are used on your 
+        webcomic's site! You can use these to quickly edit the colors of certain parts
+        in the website without replacing every color code in it.
+*/
+:root {
+    --webcomic-primary-background-color: #DDDDDD;
+    --webcomic-secondary-background-color: #3C3F47;
+    --webcomic-primary-text-color: #222222;
+    --webcomic-secondary-text-color: #EEEEFF;
+}
+
+
+.comic-page-title, #archive .comic-title, .comment-content, .extra-page-content, .blog-content {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+/*
+    BODY
+    
+    The body section is here to determine what color the white space of your website will be,
+    as well as what color most text is on the page.
+    
+    You can also replace this background with an image of your own- Rather than a solid color.
+    an example image is currently commented out in this, but if you delete the symbols that make
+    it a comment, you can see it in action. If you want to replace it with your own, then just
+    edit the URL with your own image's URL!
+    
+    You can use hex codes (#FFFFFF) to change the color, or you can use RGB values - Using the 
+    command 'rgb([RED VALUE], [GREEN VALUE], [BLUE VALUE])'. Keep in mind that the RGB values 
+    range from 0 to 255.
+*/
+
+body {
+    background: var(--webcomic-primary-background-color);
+    background-image: url(https://howltestcomic2.thecomicseries.com/files/background/starrybackground.png);
+    color: var(--webcomic-primary-text-color);
+}
+
+/*
+    A (Stands for "Anchor", I guess- I didn't make HTML, okay?)
+    
+    "Anchor" elements will be any element that contains a link- This does NOT includes all the links 
+    on the top Nav Bar, such as your Comic's Title, the Home page, Archives, Chapters, etc. This is the 
+    default text color for links that users post, for example.
+    
+    The line that says "Text-Decoration" is meant to help users differentiate links from normal text
+    in some cases, by adding an underline, or some other manner of altering the text. If you want 
+    links to be harder to find, or to just have a similar formatting to the rest of the text surrounding
+    it, then change 'underline' to 'none'. 
+*/
+
+a {
+    color: #3E3E3E;
+    text-decoration: underline;
+}
+
+    /*
+    A:HOVER
+    
+    This one is a little self-explanatory, but this is the color of the text, when your mouse is hovering
+    over it, as well as how the text is decorated. If you made text-decoration 'none' in the 'a' style 
+    above, maybe you want to put 'underline' here, so that when a user hovers over a link, it makes an 
+    underline.
+*/
+
+    a:hover {
+        color: #F23E3E;
+        text-decoration: none;
+    }
+
+/*
+    HR - Horizontal Rule
+    
+    This element is all the lines that divide up parts of your page - Not to be confused with
+    the "div" element, these are the visible dividers on the page view. Generally, it's good to keep them 
+    at about 1px tall, but if you want them thicker, all you need to do is increase the size of the 
+    'border-bottom' element. You can also change the color by altering the Hex code for the line.
+*/
+
+hr {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #383838;
+    margin: 30px 0;
+}
+
+/*
+    The "Clear" property here is just used to make sure that HRs and other elements given the class "clear"
+    fall below any elements that float to either side. Don't worry too much about this one-
+*/
+
+hr, .clear {
+    clear: both;
+}
+
+/*
+    SELECTION and MOZ-SELECTIOn
+    
+    These both affect what text looks like when a user highlights text on your comic's page- 
+    'background' affects the color behind the text, and 'color' affects the color of the text when it's
+    highlighted. These should be the same.
+*/
+
+::selection {
+    background: #aaa;
+    color: #333333;
+}
+
+::-moz-selection {
+    background: #aaa;
+    color: #333333;
+}
+
+/* NAVIGATION ELEMENTS */
+
+/* 
+    PURE-MENU
+    
+    Pure-Menu refers to the header elements of the page- Featuring your title and the home, archive, chapter
+    and drop-down menu items.
+*/
+
+.pure-menu-link {
+    color: #5544c2;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+    .pure-menu-link:hover, .pure-menu-link:focus {
+        background: none;
+        color: #888;
+    }
+
+.pure-menu-horizontal {
+    white-space: normal;
+}
+
+.author-mobile img {
+    display: none;
+}
+
+
+/*
+    CUSTOM-X
+    
+    These Style elements affect the text items on the banner- Custom-Brand affects most of their text color, their font and size, and 
+        whether or not they are all uppercase. They will all appear at the top of the page.
+*/
+
+.custom-brand {
+    color: #222;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 150%;
+}
+
+.custom-wrapper {
+    height: 2.4em;
+    background-color: var(--webcomic-primary-background-color);
+    margin-bottom: 1em;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    transition: height 0.5s;
+    align-items: center;
+}
+
+    .custom-wrapper.open {
+        height: auto;
+    }
+
+.custom-menu-3 {
+    text-align: right;
+}
+
+.custom-toggle {
+    width: 34px;
+    height: 34px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+    .custom-toggle .bar {
+        position: absolute;
+        top: 18px;
+        right: 7px;
+        background-color: #444;
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 100px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+        .custom-toggle .bar:first-child {
+            -webkit-transform: translateY(-6px);
+            -moz-transform: translateY(-6px);
+            -ms-transform: translateY(-6px);
+            transform: translateY(-6px);
+        }
+
+    .custom-toggle.x .bar {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+        .custom-toggle.x .bar:first-child {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+/* 
+    This media query is still a part of the menu at the top, but only triggers when the width of the
+        window you're viewing goes under a certain width. At that point, the individual options would disappear,
+        and the three lines to open up a drop-down menu will replace them, making more room on the Nav bar.
+*/
+
+@media (max-width: 47.999em) {
+    .custom-wrapper {
+        overflow: hidden;
+    }
+
+    .pure-menu {
+        text-align: left !important;
+    }
+
+    .custom-menu-3 {
+        text-align: left;
+    }
+
+    .custom-toggle {
+        display: block;
+    }
+}
+
+/* 
+    CONTENT
+    
+    "Content" refers to the section of the webpage where a large portion of stuff will be - Your comic appears
+        here, as well as author comments, titles, buttons for navigating the comic, and side banners.
+    
+    These style entries will generally apply to things in that content space.
+*/
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.content {
+    min-width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+    .content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+/*
+    BUB-CONTENT
+    
+    This segment, labelled "BUB" for "Back-up-Background," effectively changes the color of the archive page's segment, without 
+        interfering with the background image of the page, if you choose to use it.
+*/
+
+.bub-content {
+    background-color: var(--webcomic-primary-background-color);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.center img, img.center {
+    margin: 0 auto;
+    display: block;
+}
+
+.comic img {
+    display: block;
+    margin: 0 auto;
+}
+
+.comic-segments {
+    line-height: 0; /*this is to prevent there from being space between the images on multi-image pages*/
+    text-align: center;
+}
+
+    .comic-segments .text-content {
+        line-height: normal;
+    }
+
+
+.flex-content-display {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* 
+    BANNERS AND CENTER-CONTENT
+    
+    ".side-banner" and ".center-content" affect the portions of Side-banners and the center comic. 
+        Generally, if you want everything to fit on one page, you should make sure that the following
+        are less than (Or equal to) 100%:
+    
+    2 * side-banner width + center-content width <= 100%
+    
+    This will make sure the three columns make up the whole page space. You can make this total
+        less than 100%, if you want a bit more space between the banner and center content.
+*/
+
+.side-banner {
+    min-width: 100px;
+    width: 15%;
+    margin: 0px auto;
+}
+
+    .side-banner img {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 20%;
+    }
+
+.center-content {
+    background: var(--webcomic-primary-background-color);
+    padding: 0 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+    width: 65%;
+}
+
+/*
+    This ".comic img" entry is what makes the corners of the comic a little rounded. this can help soften the 
+        image's layout on the page a little more, and can be edited to change how much of the image is round.
+*/
+
+.comic img {
+    border-radius: 20px;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.left {
+    float: left;
+    text-align: left;
+}
+
+/* 
+    NAVIGATION BUTTONS
+    
+    These are the icons for moving through the comic. If you haven't edited this, these icons will
+        use the navigation icons from the layout "Desire". Their notation goes as follows:
+    
+    '-fir' - Moves to the first page.
+    '-lst' - Moves to the last page.
+    '-prv' - Moves to the previous page in series.
+    '-nxt' - Moves to the next page in series.
+    '-del' - This deletes a user's comment, or an author's notes.
+    '-edi' - To edit your published comment, or author note.
+    '-rpl' - To reply to a comment.
+    '-sav' - Saves a user's spot in the comic.
+    '-lod' - Loads a saved spot in the comic.
+*/
+
+.ico-src, .ico-del, .ico-edi, .ico-rpl, .ico-fir, .ico-lst, .ico-prv, .ico-nxt, .ico-sav, .ico-lod {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    opacity: 0.5;
+    margin: 5px 0;
+}
+
+    .ico-src:hover, .ico-del:hover, .ico-edi:hover, .ico-rpl:hover, .ico-fir:hover, .ico-lst:hover, .ico-prv:hover, .ico-nxt:hover, .ico-sav:hover, .ico-lod:hover {
+        opacity: 0.8;
+    }
+
+.ico-fir {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) 0 -24px;
+}
+
+.ico-lst {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) -24px -24px;
+}
+
+.ico-prv {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) -72px -24px;
+}
+
+.ico-nxt {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) -24px 0;
+}
+
+.ico-del {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) -48px 0;
+}
+
+.ico-edi {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) -72px 0;
+}
+
+.ico-rpl {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) -48px -24px;
+}
+
+.ico-sav {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) -96px -24px;
+}
+
+.ico-lod {
+    background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) -96px 0;
+}
+
+
+/* 
+    VOTE ICONS
+    
+    These affect the Rating System buttons that appear below your comic. The rating system is actually 
+        five elements of increasing width, using a single image. If you want to edit how these ratings look,
+        you'll have to edit an image, upload it, and replace the URL in these three spots to fully replace it.
+*/
+
+.votemcgoat {
+    margin: 0;
+    position: relative;
+    background: url(https://howltestcomic2.thecomicseries.com/files/buttons/sprite_rate.png) top left no-repeat;
+    display: block;
+    height: 24px;
+    width: 140px;
+    opacity: 0.8;
+}
+
+    .votemcgoat .title {
+        position: relative;
+        left: -150px;
+        top: 5px;
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+    }
+
+.hearts {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(https://howltestcomic2.thecomicseries.com/files/buttons/sprite_rate.png) center left repeat-x;
+    display: block;
+    height: 24px;
+}
+
+    .hearts span {
+        display: none;
+    }
+
+    .hearts a {
+        display: block;
+        height: 24px;
+        background: none;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+        .hearts a:hover {
+            background: url(https://howltestcomic2.thecomicseries.com/files/buttons/sprite_rate.png) bottom left repeat-x;
+            opacity: 0.9 !important;
+        }
+
+/* 
+    These Like widths are set to longer versions each time because each one includes the previous buttons.
+        This is not a glitch, it's just how the page works-
+*/
+
+.like1 {
+    width: 29px;
+}
+
+.like2 {
+    width: 58px;
+}
+
+.like3 {
+    width: 87px;
+}
+
+.like4 {
+    width: 116px;
+}
+
+.like5 {
+    width: 140px;
+}
+
+/*
+    BUTTON-ARRAY
+    
+    This style entry affects button groups- You can remove it to get rid of the bubbles around
+        the button icons, or edit the colors to your liking to edit the bubbles' colors. You can also adjust
+        the "border-radius" property to adjust how rounded the corners are.
+*/
+.button-array {
+    background: var(--webcomic-secondary-background-color);
+    padding: 4px 8px;
+    border-radius: 45%;
+    margin: 5px 5px;
+}
+
+/* 
+    PERMALINKS
+    
+    These two impact the permalinks aspects of your website. A few things to note about how this spacing is set up:
+    - "margin" refers to the space from the text that still is a within the "border".
+    - "border" is the line that you can use to trace a square around the text. Example: "border: 1px solid black"
+        background color also ends here.
+    - "padding" is the space that the permalink is given outside of the border. 
+*/
+.permalinks {
+    margin: 0 auto 25px auto;
+}
+
+    .permalinks input {
+        width: 70%;
+        background: var(--webcomic-secondary-background-color);
+        border: none;
+        padding: 5px;
+        color: #fff;
+        font-size: smaller;
+    }
+
+/* 
+    ADS 
+    
+    These are the Style elements for Advertisements on your comic page. Not a lot to edit here, as you can toggle
+        their visibility on your WebComic's settings.
+*/
+
+#cfba {
+    margin: 25px auto;
+    text-align: center;
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+    #cfba img {
+        max-width: 100%;
+        height: auto;
+    }
+
+/* 
+    ARCHIVE
+    
+    These style sections are only retrieved when accessing the "/archive" part of your
+        comic's webpage. The #archive tag is what makes sure that the styles are only accessed
+        on that specific page- So, if you have another page that you want it to only appear on 
+        a certain url, you might want to try and use this!
+    
+    ".chaptertitle" - The title banner of the chapter. This will appear at the top of every
+        sorted chapter, and will span most of the screen. If you don't want it to be all 
+        capitalized, you can remove the "text-transform:uppercase" part from this section.
+    ".chapterdesc" - Repeated for all chapters as well, showing the description of the 
+        chapter. Right now, it just makes the text italic.
+    ".archivecomic" - For every comic in each chapter, this rule is applied to the box that
+        contains the number, title, and date. 
+        
+        ".comicnumber" - The number on the comic, in its sorted order. Will appear on the left
+            by default, but you'll have to adjust the order in the HTML, not the CSS, to change
+            that.
+        ".comictitle" - The title of the comic. Will appear in the center by default.
+        ".comicposttime" - The time the comic was posted. Will appear on the right by default.
+*/
+
+#archive {
+    width: 100%;
+    margin: 25px auto;
+}
+
+    #archive td, #archive th {
+        padding: 10px;
+        text-align: left;
+    }
+
+    #archive tbody tr:nth-child(odd) {
+        background-color: var(--webcomic-secondary-background-color);
+    }
+
+    #archive .chapter-title {
+        background-color: #000000 !important;
+        opacity: 0.5;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+    }
+
+    #archive .chapter-desc {
+        font-style: italic;
+    }
+
+    #archive .archive-comic {
+        color: #ddd;
+    }
+
+    #archive .comic-number {
+        width: 25px;
+    }
+
+    #archive .comic-title a {
+        color: #ddd;
+    }
+
+        #archive .comic-title a:hover {
+            color: #f44;
+        }
+
+    #archive .comic-post-time {
+        width: 200px;
+        text-align: right;
+    }
+
+/*
+    ARCHIVE-CHAPTERS
+    
+    When users go to "/archive/chapters" on your webcomic page, these are what style blocks are used. If
+        you clicked "ARCHIVE" and then "Comic Overview", you'd likely been taken to this page.
+        
+    ".chapter" - This is an element that is repeated for every chapter in your comic. It's a block that 
+        contains the comic's cover image, its title, description, and a link to the pages in that comic.
+    ".chapter-cover img" - Refers to the cover page displayed on the left side of the comic's block. It is 
+        automatically sized to fit a small portion of the screen, by automatically adjusting width based
+        on how tall the chapter section is.
+    ".chapter-data" - All text containing information on the chapter is stored here. The "flex: 1 1 0%"
+        is what adjusts its size relative to the image. Increasing the % value will make the text take up
+        more room, and the image less room.
+    ".chapter-more" - Controls the link to all the chapter's comics. If you want to control the color of 
+        the link when you hover over it, use the following:
+        
+        #archive-chapters .chapter-more:hover{
+            color: [COLOR HEX HERE];
+        }
+    
+*/
+
+#archive-chapters {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    #archive-chapters .chapter {
+        display: flex;
+        margin-bottom: 35px;
+    }
+
+    #archive-chapters .chapter-cover {
+        margin-right: 15px;
+    }
+
+.chapter-cover img {
+    max-width: 100%;
+    height: auto;
+}
+
+#archive-chapters .chapter-data {
+    flex: 1 1 0%;
+}
+
+#archive-chapters h3 {
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+#archive-chapters .chapter-description {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+#archive-chapters .chapter-more {
+    font-size: 14px;
+}
+
+/*
+    archive-back-link is used to transfer between the "/archive/chapters" and "/archive"
+        pages. This affects both links in either page.
+*/
+
+.archive-back-link {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/*
+    THUMBNAIL PREVIEW BOX
+    
+    When you hover over a comic in the "/archive" website, you will see a thumbnail appear
+        near your mouse. These style segments will affect it.
+*/
+
+#thumbnail-preview-box, #thumbnail-preview-box img {
+    border-radius: 25px;
+}
+
+#thumbnail-preview-box,
+.chapter-cover a {
+    background-color: #202226;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+    transition: opacity 200ms linear;
+    display: block;
+    padding: 8px;
+}
+
+    #thumbnail-preview-box img,
+    .chapter-cover a img {
+        display: block;
+    }
+
+/* 
+    COMMENTS
+    
+    These elements will cover all parts of a comment list - This includes Author Notes!
+    
+    There are several properties to note about these:
+    
+    'Color' - The color of the text.
+    'Background' - The color of the background. You can replace it with an image using "url([IMAGE URL])"
+    'Padding' - The space before the color of the box ends
+    'Margin' - The space around the box
+    'Align-Items' (In .boxes) - The side that elements will lean towards
+    'Border-Radius' (In .box2) - The roundness of the corners of the box
+    
+    'filter: grayscale' and 'webkit-filter: grayscale' both refer to how gray-ified the user profile
+        pictures are. If you want the pictures to be colored, reduce these values to 0, or delete them.
+    'transition' and 'webkit-transition' affect how the profile pictures shift between their states of 
+        gray. If you want to speed it up, reduce '3s' to '1s' or another number, or you can lengthen it
+        by doing the opposite, and increasing the number.
+    
+    
+    Each of the labelled boxes will contain different aspects of the comments posted:
+    
+    .box1 - Where the larger avatar image appears. Will only display on the webpage if the window
+        width is above a certain threshold (See the @media section at the bottom.)
+    .box2 - Where the comment's content appears. 
+    .box3 - Where the buttons for replying to, editing, and deleting comments will appear.
+    
+*/
+
+.comments {
+    background: var(--webcomic-secondary-background-color);
+    color: var(--webcomic-secondary-text-color);
+    padding: 25px 0;
+    margin: 25px 0 0 0;
+    width: 100%;
+}
+
+    .comments
+    .btn {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 15px 30px;
+        border: 1px solid #fff;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.5;
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: uppercase;
+    }
+
+.btn:hover {
+    opacity: 0.8;
+    color: #fff;
+}
+
+.boxes {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+    .boxes + .boxes {
+        margin-top: 30px;
+    }
+
+.box {
+    flex: 0 0 auto;
+}
+
+.box1 {
+    width: 125px;
+    padding: 0 30px 0 0;
+    align-self: center;
+}
+
+.box2 {
+    flex: 1 1 auto;
+    width: 75%;
+    padding: 15px;
+    align-self: stretch;
+}
+
+.box2 {
+    position: relative;
+    background: #2f3238;
+    border: 1px solid #2f3238;
+    border-radius: 10px;
+}
+
+    .box2:after, .box2:before {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .box2:after {
+        border-color: rgba(47, 50, 56, 0);
+        border-right-color: #2f3238;
+        border-width: 15px;
+        margin-top: -15px;
+    }
+
+    .box2:before {
+        border-color: rgba(47, 50, 56, 0);
+        border-right-color: #2f3238;
+        border-width: 16px;
+        margin-top: -16px;
+    }
+
+.box3 {
+    width: 25px;
+    align-self: flex-start;
+}
+
+.box1 img, .author-mobile img {
+    border-radius: 60px;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: all 3s ease;
+    transition: all 1s ease;
+}
+
+    .box1 img:hover, .author-mobile img:hover {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+
+.meta {
+    margin: 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    color: #777;
+}
+
+.box3 {
+    padding: 15px;
+    padding-left: 25px;
+    width: 25px;
+}
+
+    .box3 a {
+        font-size: 25px;
+        display: block;
+        text-decoration: none;
+    }
+
+.autha .box2 {
+    background: var(--webcomic-secondary-background-color);
+    color: var(--webcomic-secondary-text-color);
+}
+
+    .autha .box2:after {
+        border-color: rgba(32, 32, 32, 0);
+        border-right-color: var(--webcomic-secondary-background-color);
+        border-width: 15px;
+        margin-top: -15px;
+    }
+
+    .autha .box2:before {
+        border-color: rgba(32, 32, 32, 0);
+        border-right-color: var(--webcomic-secondary-background-color);
+        border-width: 16px;
+        margin-top: -16px;
+    }
+
+.author {
+    color: var(--webcomic-secondary-text-color);
+}
+
+.author-mobile {
+    color: var(--webcomic-secondary-text-color);
+}
+
+    .author-mobile img {
+        display: none;
+    }
+
+.author img {
+    background: #fff;
+}
+
+.comments #commentform iframe {
+    background-color: var(--webcomic-primary-background-color);
+}
+
+
+.reply .box1 {
+    width: 75px;
+    padding-left: 95px;
+}
+
+.reply .box2 {
+    width: 70%;
+}
+
+
+/* 
+    SEARCH
+    
+    This impacts the search bar element, at the very bottom of the page, in the footer. You 
+        can change the image for the search icon by altering the URL inside, and pasting in
+        your own image URL, optionally uploading it here on ComicFury (Using the 'Upload Extra
+        Files' option in the management section). You can make the icon whatever you want!
+        
+    '.search input[type=submit]' - Refers to the button for searching. You can also alter
+        how opaque it becomes when you hover over the button, by adjusting the ':hover' 
+        addition to this.
+    '.search input[type=text]' - Refers to the text box where you search. You can change the 
+        background color of this object, as well as the font and height of the object. Padding
+        can make more space around the search term, if you want it a little larger. 
+        'border-radius' here makes the corners rounder.
+*/
+.search {
+    margin: 15px 0;
+    float: right;
+}
+
+    .search input[type=submit] {
+        background: url(https://comicfury.com/images/layouts/desire/sprite_icons.png) 0 0;
+        border: 0;
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        opacity: 0.5;
+        vertical-align: middle;
+    }
+
+        .search input[type=submit]:hover {
+            opacity: 0.8;
+        }
+
+    .search input[type=text] {
+        background: #aaaaaa;
+        border: 0;
+        padding: 0px 10px;
+        font-size: 12px;
+        line-height: 24px;
+        vertical-align: middle;
+        border-radius: 5px;
+    }
+
+/* footer */
+footer {
+    font-size: 11px;
+    background: var(--webcomic-primary-background-color);
+    padding: 25px 0;
+}
+
+.footer-inner div:not(:last-of-type) {
+    margin-bottom: 8px;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+footer li {
+    list-style: none;
+    margin-right: 14px;
+}
+
+.hostedby {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+    .hostedby a {
+        display: inline-flex;
+        align-items: center;
+        word-wrap: normal;
+        word-break: keep-all;
+    }
+
+        .hostedby a img {
+            width: auto;
+            margin-left: 0.5em;
+            margin-right: 5px;
+        }
+
+    .hostedby .comicprof {
+        margin-left: 5px;
+    }
+
+.cflink {
+    clear: both;
+    padding-top: 25px;
+    text-align: center;
+}
+
+    .cflink a:link, .cflink a:visited {
+        opacity: 0.9;
+    }
+
+    .cflink a:hover {
+        opacity: 1;
+    }
+
+.pages a, .pageskip {
+    display: inline-block;
+    text-align: center;
+    width: 27px;
+    height: 27px;
+    line-height: 27px;
+    border-radius: 27px;
+    margin-left: 27px;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 7px;
+    opacity: 0.75;
+}
+
+.pages a {
+    border: 2px solid white;
+}
+
+.pageskip {
+    padding: 2px;
+}
+
+.pages a:hover {
+    opacity: 0.4;
+}
+
+.currentpage a, .currentpage a:hover {
+    opacity: 0.75;
+    background-color: #fff;
+    color: #2f3238;
+}
+
+.currentpage {
+    font-weight: bold;
+}
+
+@media (max-width: 950px) {
+    .reply .box1 img {
+        display: none;
+    }
+
+    .reply .author-mobile img {
+        display: block;
+        width: 25px;
+        height: 25px;
+        float: left;
+        margin: 0 5px 0 0;
+        border-radius: 15px;
+    }
+
+    .chapter-cover img {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 680px) {
+    .content .flex-content-display .side-banner {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    .content {
+        width: 95%;
+        min-width: 95%;
+        border-radius: 5px;
+    }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .author-mobile img {
+        display: block;
+        width: 25px;
+        height: 25px;
+        float: left;
+        margin: 0 5px 0 0;
+        border-radius: 15px;
+    }
+
+    .meta .author {
+        line-height: 25px;
+    }
+
+    .box1 img {
+        display: none;
+    }
+
+    .box {
+        display: block;
+        width: auto;
+    }
+
+    .boxes {
+        display: table;
+    }
+
+    .hero .pure-menu-link {
+        color: #fff;
+    }
+
+    .box3 {
+        float: right;
+        width: 100%;
+        text-align: right;
+        padding: 5px 0 0 0;
+    }
+
+        .box3 a {
+            display: inline-block;
+        }
+
+    .title h1 {
+        font-size: 425%;
+    }
+
+    .reply .box2 {
+        width: 80%;
+        float: right;
+    }
+
+    .hero .pure-menu-link {
+        padding: .5em 1em
+    }
+
+    .boxes + .boxes {
+        margin-top: 15px;
+    }
+
+    .chapter-cover img {
+        max-width: 90px;
+    }
+}

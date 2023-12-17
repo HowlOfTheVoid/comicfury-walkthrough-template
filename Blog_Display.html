@@ -1,0 +1,76 @@
+﻿<div class="content">
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <p class="arrows right">
+                [c:prevbloglink]<a href="[v:prevbloglink]" class="ico-prv" alt="Previous" title="Previous"></a>[/]
+
+                [c:nextbloglink]<a href="[v:nextbloglink]" class="ico-nxt" alt="Next" title="Next"></a>[/]
+            </p>
+            <div class="post blog-content">
+                <h4>[v:blogtitle]</h4>
+                <div class="meta">[v:posttime] | <a href="[v:profilelink]" class="author">[v:authorname]</a></div>
+                [v:blog]
+
+                <div class="clear"></div>
+
+                [c:allowcomments]
+                <div class="meta">
+                    <a href="[v:blogarchivelink]">To Blog Archive</a>
+                </div>
+                [/]
+            </div>
+            <hr>
+        </div>
+    </div>
+
+</div>
+
+[c:showcomments]
+<div class="comments">
+    <div class="content">
+
+        [c:showcomments]
+        <h4>Comments</h4>
+        [/]
+
+        [c:allowcomments]
+        <p class="center" id="commentform">
+            [v:commentform]
+        </p>
+        [/]
+        [c:comments]
+
+        [l:comments]
+        <div class="boxes [c:l.is_reply]reply[/]" id="[v:l.commentanchor]">
+            <div class="box box1"><a href="[v:l.profilelink]" class="author"><img src="[c:l.avatar][v:l.avatar][/][c:!l.avatar]https://comicfury.com/images/layouts/desire/anonymousavatar.png[/]" alt="[v:l.authorname]" /></a></div>
+            <div class="box box2 commentcontent">
+                <p class="meta">
+                    <a href="[v:l.profilelink]" class="author-mobile"><img src="[c:l.avatar][v:l.avatar][/][c:!l.avatar]https://comicfury.com/images/layouts/desire/anonymousavatar.png[/]" alt="[v:l.authorname]" /></a>
+                    <a href="[v:l.profilelink]" class="author">[v:l.authorname]</a>
+                </p>
+                <p>[v:l.comment]</p>
+                <p class="meta right">[v:l.posttime]</p>
+
+                <div class="replyform-placeholder">
+                    [v:l.replyform]
+                </div>
+            </div>
+            <div class="box box3 commentcontrol [v:l.controlclass]">
+                <span class="[v:l.editclass]">
+                    <a class="ico-edi" href="[v:l.editlink]&notitle" onclick="showCommentActionForm(event, [v:l.edit_jsdata]);" target="_blank"></a>
+                </span>
+                <span class="[v:l.deleteclass]">
+                    <a class="ico-del" href="[v:l.deletelink]" onclick="showCommentActionForm(event, [v:l.delete_jsdata]);" target="_blank"></a>
+                </span>
+                <a class="ico-rpl" href="[v:l.replylink_nopopup]&notitle" onclick="showCommentActionForm(event, [v:l.reply_jsdata]);" target="_blank"></a>
+            </div>
+        </div>
+        [/]
+
+        [c:allowcomments]
+        <p class="center"><a class="btn" href="#commentform">Leave a Comment</a></p>
+        [/]
+        [/]
+    </div>
+</div>
+[/]

@@ -1,0 +1,146 @@
+﻿<div class="bub-content content">
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <!--  This is the top segment that appears over the table. It will show the chapter's name, if you're looking at an archive of that chapter. -->
+            <h4>Archive [c:ischapterarchive] - [v:chaptername][/]</h4>
+            [c:ischapterarchive]
+            <p class="center"><em>[v:chapterdescription]</em></p>
+            [/]
+
+
+
+            [c:show_comic_list]
+
+            <!-- This is the box that thumbnails previews will be shown inside of, on mouseover of archive comics. -->
+            <div id="thumbnail-preview-box" style="[v:thumbnail_box_styles]"></div>
+            <!--
+                ARCHIVE TABLE
+
+                The table here uses a lot of ComicFury's advanced "Condition" features in the HTML - To get a full understanding of
+                    it, you may want to check out the "Layout Documentation" on the right- Under the useful links. A short explanation
+                    of what each does in this table is provided below.
+
+                You may have seen these already- These draw on variables from your webcomic all over the place to make it simple for each
+                    page.
+
+                '[l:comics_paginated][/]' - All the code inside this segment is REPEATED for each comic page you have.
+                '[c:l.newchapter][/]' - If the comic is part of a chapter that hasn't appeared in the list yet, it will enter
+                    this part of the HTML, making a Chapter title break in the table.
+                '[c:l.chapterdescription][/]' - If the comic has a description, it will be included in the break.
+
+
+            -->
+            <table id="archive">
+
+                <thead>
+                    <tr>
+                        <th colspan="3">Comics</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    [l:comics_paginated]
+                    [c:l.newchapter]
+                    <tr class="chapter-title">
+                        <th colspan="3">[v:l.chaptername]</th>
+                    </tr>
+                    [c:l.chapterdescription]
+                    <tr class="chapter-desc">
+                        <td colspan="3">[v:l.chapterdescription]</td>
+                    </tr>
+                    [/]
+                    [/]
+                    <tr class="archive-comic">
+                        <td class="comic-number">#[v:l.number]</td>
+                        <td class="comic-title"><a href="[v:l.comicurl]" onpointerover="comicfury.thumbnailMouseOver(event, 'thumbnail-preview-box', [v:l.thumbnail_jsdata])" onpointerout="comicfury.thumbnailMouseOut(event)">[v:l.comictitle]</a></td>
+                        <td class="comic-post-time">[v:l.posttime]</td>
+                    </tr>
+                    [/]
+                </tbody>
+            </table>
+
+            [/]
+
+
+            [c:show_chapter_overview]
+
+            <div id="archive-chapters">
+
+                [l:chapters]
+                <div class="chapter">
+                    [c:l.cover]
+                    <div class="chapter-cover">
+                        <a href="[v:l.firstcomicinchapter]">
+                            <img src="[v:l.cover]" width="[v:l.cover_width_small]" height="[v:l.cover_height_small]">
+                        </a>
+                    </div>
+                    [/]
+                    <div class="chapter-data">
+                        <div class="chapter-title">
+                            <h3><a href="[v:l.firstcomicinchapter]">[v:l.chaptername]</a></h3>
+                            <div class="chapterdescription">[v:l.chapterdescription]</div>
+                        </div>
+                        <div class="chapter-more">
+                            <a href="[v:l.chapterarchiveurl]">Comics in this chapter</a>
+                        </div>
+                    </div>
+                </div>
+                [/]
+            </div>
+            [/]
+
+
+            [c:show_chapter_overview]
+            <div class="archive-back-link">
+                <a href="/archive/comics">&lt;&lt; List all Comics</a>
+            </div>
+            [/]
+
+            [c:show_comic_list]
+
+            [c:ischapterarchive]
+            <div class="archive-back-link">
+                <a href="/archive/">&lt;&lt; Go back to Main Archive</a>
+            </div>
+            [/]
+            [c:!ischapterarchive]
+            [c:usechapters]
+            <div class="archive-back-link">
+                <a href="/archive/chapters">&lt;&lt; Chapter Overview</a>
+            </div>
+            [/]
+            [/]
+            [/]
+
+            [c:lastpagenumber>1]
+            <hr>
+            <h4>Pages</h4>
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="pages">
+                        [l:pages]
+                        [c:l.skipped_ahead]
+                        <span class="pageskip">...</span>
+                        [/]
+
+                        [c:l.is_current]
+                        <span class="currentpage">
+                            [/]
+
+                            <a href="[v:l.pagelink]" class="pagelink">[v:l.page]</a>
+
+                            [c:l.is_current]
+                        </span>
+                        [/]
+                        [/]
+                    </div>
+
+                </div>
+            </div>
+            [/]
+
+
+        </div>
+    </div>
+    <hr>
+</div>

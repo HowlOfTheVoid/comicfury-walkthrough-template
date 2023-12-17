@@ -1,0 +1,217 @@
+﻿<style>
+    .content {
+        width: [v:comicwidth]px;
+    }
+</style>
+
+
+<!--
+CONTENT SECTION
+
+This is the section where most of your comic's content will show up! It contains the comic page, the buttons
+for changing the comic page, giving a rating, loading and saving a spot, and the author's comment. If you
+wish, this will also contain the side banners for your image.
+
+
+
+-->
+
+<div class="content">
+
+    <!--
+    FLEX CONTENT DISPLAY
+
+    This little divider is what helps separate the side banners and the center comic page.
+
+    -->
+
+    <section class="flex-content-display">
+
+        <!--
+        SIDE BANNER (LEFT)
+
+        This segment is for the banner that will appear to the left of your comic. If you do not want any part of
+        this to appear to the side of the comic, you can delete it, or simply comment it out; By cutting out the \
+        line just below this blue text and pasting it below the line titled "left side-banner", you can remove it.
+
+        You can use any image for this part of the comic, but my best suggestion is an image with at least a 4:1
+        aspect ratio, favoring height. You can paste the URL of the image into the quotes after "src=", and the page
+        will retrieve the image. If you want it to be a shorter or cleaner URL, I'd suggest uploading an extra file
+        to ComicFury with the instructions below;
+
+        1. Click "Upload Extra Files" in the Webcomic Site/Layout segment of the Webcomic Management page.
+
+        2. Upload the image using that page, naming the file whatever you want and putting it in whatever folder you
+        like.
+
+        3. Using the format "/files/[FOLDER NAME]/[FILE NAME], you can have the image stay within the bounds of ComicFury.
+        -->
+
+        <span class="left side-banner"><img src="/files/banners/left-banner.png" /></span>
+
+        <!--
+        CENTER CONTENT
+
+        This segment should be taking up most of the main content section of the screen. This is where your comic page
+        shows up, buttons, and your Author Notes.
+        -->
+
+        <span class="center-content">
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <h4 class="left comic-page-title">
+                        #[v:comicnumber] - [v:comictitle]
+                        [c:usechapters] <!--comment:[this one checks if the webcomic uses chapters]-->
+                        [c:haschapter] <!--comment:[this one checks if the comic strip is in a chapter]-->
+                        - in <a href="[v:chapterlink]">[v:chaptername]</a>
+                        [/]
+                        [/]
+                    </h4>
+
+                    <p class="arrows right button-array">
+                        <a href="/comics/first/" class="ico-fir" alt="First" title="First"></a>
+                        <a href="[v:prevcomic]" class="ico-prv" alt="Previous" title="Previous"></a>
+                        <a href="[v:nextcomic]" class="ico-nxt" alt="Next" title="Next"></a>
+                        <a href="/comics/" class="ico-lst" alt="Latest" title="Latest"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="comic">[v:comicimage]</div>
+                    <p class="arrows right button-array">
+                        <a href="/comics/first/" class="ico-fir" alt="First" title="First"></a>
+                        <a href="[v:prevcomic]" class="ico-prv" alt="Previous" title="Previous"></a>
+                        <a href="[v:nextcomic]" class="ico-nxt" alt="Next" title="Next"></a>
+                        <a href="/comics/" class="ico-lst" alt="Latest" title="Latest"></a>
+                    </p>
+                    <div class="clear"></div>
+
+                    [c:showpermalinks]
+                    <!-- Permalinks  -->
+                    <div class="permalinks">
+                        <p>
+                            <small>Permalink:</small>
+                            <input readonly onclick="this.focus();this.select()" value="[v:permalink]" type="text" data-reactid=".1.3.1">
+                        </p>
+                    </div>
+                    <!-- end permalinks -->
+                    [/]
+
+                    <div id="saveplace" class="meta left button-array">
+                        <a href="#" onclick="loadPlace();return false;" class="ico-lod" alt="Load my place" title="Load my place"></a>
+                        <a href="#" onclick="savePlace(this,[v:comicid]);return false;" class="ico-sav" id="savebutton" alt="Save my place" title="Save my place"></a>
+                    </div>
+
+                    [c:allowratings]
+                    <span class="votemcgoat right">
+                        <span class="title">Rate:</span>
+                        <span class="hearts" style="width:[ratingpercentage]%">
+                            <a class="like5" href="[v:ratelink]&amp;vote=5" title="give a rating of 5" onclick="rateWindow(event, '[v:ratelink]&amp;vote=5', [v:rate_jsdata]);" target="_blank"><span>5</span></a>
+                            <a class="like4" href="[v:ratelink]&amp;vote=4" title="give a rating of 4" onclick="rateWindow(event, '[v:ratelink]&amp;vote=4', [v:rate_jsdata]);" target="_blank"><span>4</span></a>
+                            <a class="like3" href="[v:ratelink]&amp;vote=3" title="give a rating of 3" onclick="rateWindow(event, '[v:ratelink]&amp;vote=3', [v:rate_jsdata]);" target="_blank"><span>3</span></a>
+                            <a class="like2" href="[v:ratelink]&amp;vote=2" title="give a rating of 2" onclick="rateWindow(event, '[v:ratelink]&amp;vote=2', [v:rate_jsdata]);" target="_blank"><span>2</span></a>
+                            <a class="like1" href="[v:ratelink]&amp;vote=1" title="give a rating of 1" onclick="rateWindow(event, '[v:ratelink]&amp;vote=1', [v:rate_jsdata]);" target="_blank"><span>1</span></a>
+                        </span>
+                    </span>
+                    [/]
+                    [c:authornotes]
+                    [l:authornotes]
+                    <!--
+                        AUTHOR NOTES
+
+                        This semgent of the HTML is where the Author Notes will appear. These do not need to be edited
+                        in the HTML, but it is useful to note their Classes, for editing their CSS.
+                    -->
+                    <hr>
+                    <h4 id="[v:l.commentanchor]">Author Note</h4>
+                    <div class="boxes autha">
+                        <div class="box box1"><a href="[v:l.profilelink]" class="author"><img src="[c:l.avatar][v:l.avatar][/][c:!l.avatar]https://comicfury.com/images/layouts/desire/anonymousavatar.png[/]" alt="[v:l.authorname]" /></a></div>
+                        <div class="box box2 comment-content">
+                            <p class="meta"><a href="[v:l.profilelink]" class="author-mobile"><img src="[c:l.avatar][v:l.avatar][/][c:!l.avatar]https://comicfury.com/images/layouts/desire/anonymousavatar.png[/]" alt="[v:l.authorname]" /></a> <a href="[v:l.profilelink]" class="author">[v:l.authorname]</a> said:</p>
+                            <p>[v:l.comment]</p>
+                            <p class="meta right">[v:l.posttime]</p>
+
+                            <div class="replyform-placeholder">
+                                [v:l.replyform]
+                            </div>
+                        </div>
+                        <div class="box box3 commentcontrol [v:l.controlclass]">
+                            <span class="[v:l.editclass]">
+                                <a class="ico-edi" href="[v:l.editlink]&notitle" onclick="showCommentActionForm(event, [v:l.edit_jsdata]);" target="_blank"></a>
+                            </span>
+                            <span class="[v:l.deleteclass]">
+                                <a class="ico-del" href="[v:l.replylink_nopopup]&notitle" onclick="showCommentActionForm(event, [v:l.delete_jsdata]);" target="_blank"></a>
+                            </span>
+                        </div>
+                    </div>
+                    [/]
+                    [/]
+
+
+                    <div class="cflink"><a href="https://comicfury.com"><img src="https://comicfury.com/images/cf-diamond.png" alt="" width="225" height="150" /></a></div>
+
+                </div>
+            </div>
+        </span>
+        <!-- SIDE BANNER (RIGHT) :
+                This one element is for the Side Banner that will appear to the right of your comic and Author Comments!
+                The same rules of the SRC element and uploading an image apply here, just know that this element will
+                always appear on the right side of the comic.
+        -->
+        <span class="right side-banner"><img src="/files/banners/right-banner.png" /></span>
+    </section>
+</div>
+[c:showcomments]
+<!--
+    COMMENTS
+
+    These elements reflect the Comment section of your comics! You won't be able to edit individual comments
+    here, and smaller edits to the HTML aren't suggested, as they can mess up the forms, but these classes are
+    useful to note for CSS editing.
+-->
+<div class="comments">
+    <div class="content">
+        <h4>Comments</h4>
+
+        [c:allowcomments]
+        <p class="center" id="commentform">
+            [v:commentform]
+        </p>
+        [/]
+
+        [c:comments]
+        [l:comments]
+        <div class="boxes [c:l.is_reply]reply[/]" id="[v:l.commentanchor]">
+            <div class="box box1"><a href="[v:l.profilelink]" class="author"><img src="[c:l.avatar][v:l.avatar][/][c:!l.avatar]https://comicfury.com/images/layouts/desire/anonymousavatar.png[/]" alt="[v:l.authorname]" /></a></div>
+            <div class="box box2 comment-content">
+                <p class="meta">
+                    <a href="[v:l.profilelink]" class="author-mobile"><img src="[c:l.avatar][v:l.avatar][/][c:!l.avatar]https://comicfury.com/images/layouts/desire/anonymousavatar.png[/]" alt="[v:l.authorname]" /></a>
+                    <a href="[v:l.profilelink]" class="author">[v:l.authorname]</a>
+                </p>
+                <p>[v:l.comment]</p>
+                <p class="meta right">[v:l.posttime]</p>
+
+                <div class="replyform-placeholder">
+                    [v:l.replyform]
+                </div>
+            </div>
+            <div class="box box3 commentcontrol [v:l.controlclass]">
+                <span class="[v:l.editclass]">
+                    <a class="ico-edi" href="[v:l.editlink]&notitle" onclick="showCommentActionForm(event, [v:l.edit_jsdata]);" target="_blank"></a>
+                </span>
+                <span class="[v:l.deleteclass]">
+                    <a class="ico-del" href="[v:l.deletelink]" onclick="showCommentActionForm(event, [v:l.delete_jsdata]);" target="_blank"></a>
+                </span>
+                <a class="ico-rpl" href="[v:l.replylink_nopopup]&notitle" onclick="showCommentActionForm(event, [v:l.reply_jsdata]);" target="_blank"></a>
+            </div>
+        </div>
+        [/]
+
+        [c:allowcomments]
+        <p class="center"><a class="btn" href="#commentform">Leave a Comment</a></p>
+        [/]
+        [/]
+    </div>
+</div>
+[/]

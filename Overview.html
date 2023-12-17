@@ -1,0 +1,44 @@
+﻿<div class="content">
+    <div class="pure-g">
+        <div class="pure-u-1">
+            [c:hascomics]
+
+            <div class="pure-u-3-5">
+                <h4>Latest comic - [v:latestcomictitle]</h4>
+                <div id="comicimagewrap"><a href="/comics/">[v:latestcomicimage]</a></div>
+            </div>
+
+            [/]
+            <div class="pure-u-2-5">
+                [c:hasblogs]
+                [l:latestblogs]
+
+                <div class="post blog-content">
+                    <h4>[v:l.blogtitle]</h4>
+                    <p class="meta">[v:l.posttime] by <a href="[v:l.profilelink]" class="author">[v:l.authorname]</a></p>
+                    [v:l.blog]
+
+                    <div class="clear"></div>
+
+                    [c:l.allowcomments]
+                    <div class="meta">
+                        <a href="[v:l.bloglink]">[v:l.comments] Comments</a>
+                    </div>
+                    [/]
+                </div>
+                [/]
+                [/]
+            </div>
+
+            [c:!hascomics]
+            [c:!hasblogs]
+            <div class="pure-u-1">
+                <h4>Oops!</h4>
+                <p>Nothing has been posted yet. Check back soon!</p>
+            </div>
+            [/]
+            [/]
+        </div>
+    </div>
+    <hr>
+</div>

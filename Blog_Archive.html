@@ -1,0 +1,60 @@
+﻿<div class="content">
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <h4>Archive</h4>
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    [l:blogs_paginated]
+                    <div class="post blog-content">
+                        <h4>[v:l.blogtitle]</h4>
+                        <div class="meta">[v:l.posttime] | <a href="[v:l.profilelink]" class="author">[v:l.authorname]</a></div>
+                        [v:l.blog]
+
+                        <div class="clear"></div>
+
+                        [c:l.allowcomments]
+                        <div class="meta">
+                            <a href="[v:l.bloglink]">[v:l.comments] Comments</a>
+                        </div>
+                        [/]
+                    </div>
+                    [/]
+
+                    [c:!hasblogs]
+                    <h4>Oops! No blog posts yet.</h4>
+                    There are currently no blogs.
+                    [/]
+                </div>
+            </div>
+            <hr>
+
+            [c:lastpagenumber>1]
+            <h4>Pages</h4>
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="pages">
+                        [l:pages]
+                        [c:l.skipped_ahead]
+                        <span class="pageskip">...</span>
+                        [/]
+
+                        [c:l.is_current]
+                        <span class="currentpage">
+                            [/]
+
+                            <a href="[v:l.pagelink]" class="pagelink">[v:l.page]</a>
+
+                            [c:l.is_current]
+                        </span>
+                        [/]
+                        [/]
+                    </div>
+
+                </div>
+            </div>
+            [/]
+            <hr>
+        </div>
+    </div>
+
+</div>
