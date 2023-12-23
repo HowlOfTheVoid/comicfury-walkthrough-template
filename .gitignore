@@ -1,0 +1,7 @@
+
+*.vsidx
+*.vsidx
+.vs/comicfury-walkthrough-template/v17/.wsuo
+*.sqlite
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
